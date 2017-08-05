@@ -1,4 +1,9 @@
+package combat;
 import java.util.Random;
+
+import mobsandweapon.Enemies;
+import mobsandweapon.Player;
+import mobsandweapon.Weapon;
 
 // player attack, defense, accuracy, weapon damage
 // Enemy attack, defense
@@ -9,15 +14,17 @@ public class DamageCalculator {
 		weapon = player.getweapon();
 		Random rn = new Random();
 		int chancetohit = rn.nextInt(100);
-		if(chancetohit<weapon.getaccuracy()){
+		System.out.println(weapon.getaccuracy());
+		System.out.println(chancetohit);
+		if(chancetohit<=weapon.getaccuracy()){
 			int critchance = rn.nextInt(100);
-			if(critchance>90){
+			if(critchance<=weapon.getcritical()){
 				System.out.println("Critical hit!!");
 				return (player.getattack()+weapon.getdamage())*2- enemy.getdefense();
 			}
 			else{
 				
-				return player.attack + weapon.damage -enemy.defense;
+				return player.getattack() + weapon.getdamage() -enemy.getdefense();
 				}
 		}
 		return 0;

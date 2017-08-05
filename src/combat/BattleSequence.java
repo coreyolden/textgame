@@ -1,5 +1,11 @@
+package combat;
 
 import javax.swing.JOptionPane;
+
+import environment.Area;
+import mobsandweapon.Enemies;
+import mobsandweapon.Player;
+import mobsandweapon.Weapon;
 public class BattleSequence {
 Player player;
 Enemies enemy;
@@ -33,13 +39,13 @@ public void Battle(Player play, Area area){
 				}
 				else{
 					System.out.println("You swing and strike the enemy for "+ damagedone+" damage");
-					enemy.health-= damagedone;
-					if (enemy.health<1){
+					enemy.adjusthealth(-damagedone);
+					if (enemy.gethealth()<1){
 						int goldwon = player.getlevel()*5;
 						System.out.println("You search the body and found "+goldwon+" gold coins");
-						System.out.println("You earned 10 experience");
 						player.setgold(goldwon);
-						player.AddExp(10);
+						System.out.println("You earned 100 experience");
+						player.AddExp(100);
 						battlenotover=false;
 						break;
 					}
@@ -53,12 +59,12 @@ public void Battle(Player play, Area area){
 				player.setpotions(-1);
 			}
 			
-			// now it is the enemie's turn
+			// now it is the enemy's turn
 			DamageCalculator dc = new DamageCalculator();
 			int damagedone = dc.enemyattack(enemy, player);
 			System.out.println("The enemy hits you for "+ damagedone+" damage");
-			player.health-=damagedone;
-			if(player.health<1){
+			player.adjusthealth(-damagedone);
+			if(player.gethealth()<1){
 				System.out.print("Sorry you died");
 			}
 			else{System.out.println("You have " +player.gethealth()+" health remaining");}

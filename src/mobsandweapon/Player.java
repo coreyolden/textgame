@@ -1,3 +1,5 @@
+package mobsandweapon;
+
 
 public class Player extends Mobs{
 
@@ -68,13 +70,13 @@ public class Player extends Mobs{
 	public void setpotions(int change){
 		numofpotions+=change;
 		if(change<1){
-			health+=10;
+			adjusthealth(10);
 			if(health>maxhealth){
 				health=maxhealth;
 			}
 		}
 	}
-	/**Changes the number of goldcoins the player has based on the int change which is negative if they spend coins and positive if they find some.
+	/**Changes the number of gold coins the player has based on the int change which is negative if they spend coins and positive if they find some.
 	 * @param change
 	 */
 	public void setgold(int change){

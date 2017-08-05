@@ -1,3 +1,5 @@
+package mobsandweapon;
+
 
 public  class Mobs {
 	protected int maxhealth=15;
@@ -11,12 +13,26 @@ public  class Mobs {
 	public int getdefense(){
 		return defense;
 	}
+	/**Returns the Mob's health
+	 * 
+	 * @return
+	 */
 	public int gethealth(){
 		return health;
 	}
+	/**Returns the Mob's attack
+	 * 
+	 * @return
+	 */
 	public int getattack(){
 		return attack;
 	}
-	
+	/**Changes the Mob's health when it takes damage or heals. 
+	 * 
+	 * @param adjust
+	 */
+	public void adjusthealth(int adjust){
+		health += adjust;
+	}
 
 }

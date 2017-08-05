@@ -1,3 +1,4 @@
+package environment;
 /**I plan on having it allow you to pick if you want to go to certain area types I.e. into a rock cave, a jungle a beach
  * I hope to have different enemies that spawn in each location.
  * 
@@ -9,7 +10,7 @@ private String areatype;
 public String gettype(){
 	return areatype;
 }
-Area(String type){
+public Area(String type){
 	areatype = type;
 }
 }

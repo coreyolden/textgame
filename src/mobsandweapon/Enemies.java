@@ -1,3 +1,4 @@
+package mobsandweapon;
 
 public class Enemies extends Mobs {
 	
