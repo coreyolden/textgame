@@ -81,10 +81,7 @@ public class Player extends Mobs{
 	 */
 	public void setgold(int change){
 		goldcoins+=change;
-		if(change<0){
-			System.out.println("You spent "+change+" coins. You only have "+change+" left");
-		}
-		else{System.out.println("You now have "+getcoins());}
+		
 	}
 	/**Returns the number of gold coins the player has.
 	 * 

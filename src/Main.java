@@ -2,6 +2,7 @@ import javax.swing.JOptionPane;
 
 import combat.BattleSequence;
 import environment.Area;
+import environment.Town;
 import mobsandweapon.Bow;
 import mobsandweapon.Mace;
 import mobsandweapon.Player;
@@ -13,6 +14,9 @@ public class Main {
 	public static void main(String[] args) {
 		
 		System.out.println("This is a very simple text combat game.");
+		System.out.println("You can buy potions and upgrade your weapons in town.\nEach adventure is 10 fights long"
+				+ " and if you need to travel back to town"
+				+ " you can do so and will get all of your health back");
 		String name = JOptionPane.showInputDialog("What is your name?");
 		Player player = new Player();
 		int weaponchoice = Integer.parseInt(JOptionPane.showInputDialog("Please pick your weapon.\n1: Sword\nDamage = 3 Accuracy = 90 Critical "
@@ -30,15 +34,11 @@ public class Main {
 		
 	
 		
-		//while (true){
-		
-		
-		Area area = new Area(type);
-		BattleSequence bs = new BattleSequence();
-		bs.Battle(player, area);
-		
-	
-
-	//}
+		while (true){
+		Town town = new Town();
+		town.townoptions(player);
+		Area area = new Area();
+		area.rundungeon(player);
+	}
 	}
 }

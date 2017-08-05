@@ -17,7 +17,7 @@ Weapon weapon;
  * 
  * @param play
  */
-public void Battle(Player play, Area area){
+public void Battle(Player play){
 		
 		player = play;
 		weapon = player.getweapon();
@@ -44,8 +44,8 @@ public void Battle(Player play, Area area){
 						int goldwon = player.getlevel()*5;
 						System.out.println("You search the body and found "+goldwon+" gold coins");
 						player.setgold(goldwon);
-						System.out.println("You earned 100 experience");
-						player.AddExp(100);
+						System.out.println("You earned 15 experience");
+						player.AddExp(15);
 						battlenotover=false;
 						break;
 					}

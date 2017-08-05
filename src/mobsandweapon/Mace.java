@@ -25,4 +25,25 @@ public int getaccuracy(){
 public int getcritical(){
 	return criticalchance;
 }
+/**ups the weapon's stat when the upgrade is purchased in the store. 
+ * 
+ * @param toup
+ */
+public void updamage(int toup){
+	damage+=toup;
+}
+/**ups the weapon's stat when the upgrade is purchased in the store. 
+ * 
+ * @param toup
+ */
+public void upaccuracy(int toup){
+	accuracy+=toup;
+}
+/**ups the weapon's stat when the upgrade is purchased in the store. 
+ * 
+ * @param toup
+ */
+public void upcrit(int toup){
+	criticalchance+=toup;
+}
 }

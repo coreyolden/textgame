@@ -33,6 +33,9 @@ public  class Mobs {
 	 */
 	public void adjusthealth(int adjust){
 		health += adjust;
+		if(health>maxhealth){
+			health=maxhealth;
+		}
 	}
 
 }

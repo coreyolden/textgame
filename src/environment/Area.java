@@ -1,16 +1,20 @@
 package environment;
-/**I plan on having it allow you to pick if you want to go to certain area types I.e. into a rock cave, a jungle a beach
- * I hope to have different enemies that spawn in each location.
- * 
- * @author corey
- *
- */
+
+import javax.swing.JOptionPane;
+
+import combat.BattleSequence;
+import mobsandweapon.Player;
+
 public class Area {
-private String areatype;
-public String gettype(){
-	return areatype;
-}
-public Area(String type){
-	areatype = type;
+private int dungeonlength;
+public void rundungeon(Player player){
+	for(int i =0; i<9; i++){
+		BattleSequence bs = new BattleSequence();
+		bs.Battle(player);
+		int option = Integer.parseInt(JOptionPane.showInputDialog("You have "+(9-i)+" fights left\n1: push on\n2: Return to town"));
+		if (option == 2){
+			break;
+		}
+	}
 }
 }
