@@ -19,10 +19,12 @@ import javax.swing.JEditorPane;
 import javax.swing.JLabel;
 import javax.swing.JSeparator;
 import javax.swing.JButton;
+import javax.swing.JTextField;
 
 public class Viewframe extends JFrame {
 
 	private JPanel contentPane;
+	private JTextField TypeOptionTextBox;
 
 	/**
 	 * Launch the application.
@@ -50,22 +52,41 @@ public class Viewframe extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		contentPane.setBackground(Color.GREEN);
-		
-		JEditorPane InformationAndOptions = new JEditorPane();
-		InformationAndOptions.setBounds(528, 16, 199, 454);
-		contentPane.add(InformationAndOptions);
-		
-		JTextPane textPane = new JTextPane();
-		textPane.setBounds(36, 331, 430, 139);
-		contentPane.add(textPane);
+		contentPane.setBackground(new Color(51, 204, 102));
 		
 		JPanel Displayimage = new JPanel();
-		Displayimage.setBounds(36, 30, 430, 239);
+		Displayimage.setBounds(36, 16, 462, 299);
 		contentPane.add(Displayimage);
 		
-		JButton Options = new JButton("Options");
-		Options.setBounds(0, 0, 115, 29);
-		contentPane.add(Options);
+		JTextArea ConsolLogBox = new JTextArea();
+		ConsolLogBox.setText("System will output text here");
+		ConsolLogBox.setBounds(36, 345, 462, 132);
+		contentPane.add(ConsolLogBox);
+		
+		TypeOptionTextBox = new JTextField();
+		TypeOptionTextBox.setText("Type here");
+		TypeOptionTextBox.setBounds(538, 342, 146, 26);
+		contentPane.add(TypeOptionTextBox);
+		TypeOptionTextBox.setColumns(10);
+		
+		JTextArea healthTextBox = new JTextArea();
+		healthTextBox.setText("Enemy health 10/15");
+		healthTextBox.setBounds(513, 16, 230, 22);
+		contentPane.add(healthTextBox);
+		
+		JTextArea PlayerHealthTextBox = new JTextArea();
+		PlayerHealthTextBox.setText("Your health 10/15");
+		PlayerHealthTextBox.setBounds(513, 54, 230, 22);
+		contentPane.add(PlayerHealthTextBox);
+		
+		JTextArea NumberOfPotionsTextBox = new JTextArea();
+		NumberOfPotionsTextBox.setText("Number of potions 5");
+		NumberOfPotionsTextBox.setBounds(513, 92, 230, 22);
+		contentPane.add(NumberOfPotionsTextBox);
+		
+		JTextArea OptionsTextBox = new JTextArea();
+		OptionsTextBox.setText("Options:\r\nRun\r\nAttack\r\nDrink Potion");
+		OptionsTextBox.setBounds(513, 143, 230, 172);
+		contentPane.add(OptionsTextBox);
 	}
 }
